@@ -17,6 +17,10 @@ const TaskSchema = {
     allowNull: false,
     type: DataTypes.STRING
   },
+  archived: {
+    defaultValue: true,
+    type: DataTypes.BOOLEAN
+  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,

@@ -5,10 +5,9 @@ import ListTask from './ListTask'
 
 export default function Home() {
   return (
+    
     <Fragment>
-        <div>
-        <NavBar />
-      </div>
+        
       <div className='read-the-docs'>
         
         <InputTask />

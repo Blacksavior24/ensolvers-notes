@@ -14,7 +14,7 @@ const InputTask = () => {
         body: JSON.stringify(body)
       });
 
-      window.location = "/";
+      window.location = "/Home";
     } catch (err) {
       console.error(err.message);
     }

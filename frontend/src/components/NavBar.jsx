@@ -10,7 +10,7 @@ export default function NavBar({handleClick}) {
           {/*<Search />*/}
         </div>
         <div>
-          <Link to="/">
+          <Link to="/Home">
             <span className={style.title}>
               <button className={style.btn} onClick={(e) => handleClick(e)}>
                 Task Ensolvers

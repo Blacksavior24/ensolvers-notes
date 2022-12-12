@@ -19,7 +19,7 @@ const EditTask = ({ task }) => {
         }
       );
 
-      window.location = "/";
+      window.location = "/Home";
     } catch (err) {
       console.error(err.message);
     }

@@ -4,16 +4,18 @@ import { useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import LandingPage from './components/LandingPage'
-
+import ArchivedTask from './components/ArchivedTask'
+import NavBar from './components/NavBar'
 function App() {
 
   return (
     <div>
-        <Routes>
+      <NavBar />
+      <Routes>
       <Route path='/' element={<LandingPage />} />
       <Route path='/home' element={<Home />} />
-      {/*<Route exact path='/archived' component={Archived} />
-      <Route exact path='/categories' component={Categories} />
+      <Route path='/archived' element={<ArchivedTask />} />
+      {/*<Route exact path='/categories' component={Categories} />
   <Route exact path='/404' component={Err} />*/}
     </Routes>
     </div>
