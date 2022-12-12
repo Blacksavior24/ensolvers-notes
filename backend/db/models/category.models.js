@@ -1,8 +1,8 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const TASK_TABLE = 'tasks';
+const CATEGORY_TABLE = 'categories';
 
-const TaskSchema = {
+const CategorySchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -13,14 +13,6 @@ const TaskSchema = {
     allowNull: false,
     type: DataTypes.STRING
   },
-  description: {
-    allowNull: false,
-    type: DataTypes.STRING
-  },
-  archived: {
-    defaultValue: true,
-    type: DataTypes.BOOLEAN
-  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
@@ -29,21 +21,26 @@ const TaskSchema = {
   }
 }
 
-class Task extends Model {
-  static associate() {
+class Category extends Model {
+  static associate(models) {
     // associate
-    
+    this.belongsToMany(models.Task, {
+        as: 'items',
+        through: models.TaskCategory,
+        foreignKey: 'categoryId',
+        otherKey: 'taskId'
+      });
   }
 
   static config(sequelize) {
     return {
       sequelize,
-      tableName: TASK_TABLE,
-      modelName: 'Task',
+      tableName: CATEGORY_TABLE,
+      modelName: 'Category',
       timestamps: false
     }
   }
 }
 
 
-module.exports = { TASK_TABLE, TaskSchema, Task }
+module.exports = { CATEGORY_TABLE, CategorySchema, Category }
