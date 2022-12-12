@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 import EditTask from "./EditTask";
-
+import Archived from "./Archived";
 
 const ListTask = () => {
     const [tasks, setTasks] = useState([]);
@@ -58,6 +58,8 @@ const ListTask = () => {
 
     console.log(tasks);
 
+    const taski = tasks.filter(task => task.archived == true)
+
     return (
       <Fragment>
         {" "}
@@ -69,6 +71,7 @@ const ListTask = () => {
               <th>Active</th>
               <th>Edit</th>
               <th>Delete</th>
+              <th>Archived</th>
             </tr>
           </thead>
           <tbody>
@@ -77,7 +80,7 @@ const ListTask = () => {
               <td>Doe</td>
               <td>john@example.com</td>
             </tr> */}
-            {tasks.map(task => (
+            {taski.map(task => (
               <tr key={task.id}>
                 <td>{task.name}</td>
                 <td>{task.description}</td>
@@ -93,14 +96,9 @@ const ListTask = () => {
                     Delete
                   </button>
                 </td>
-                {/*<td>
-                  <button
-                    className="btn btn-info"
-                    onClick={()=>archTask(task)}
-                  >
-                    Archivar
-                  </button>
-            </td>*/}
+                <td>
+                  <Archived task={task}/>
+                </td>
               </tr>
             ))}
           </tbody>

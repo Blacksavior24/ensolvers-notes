@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import EditTask from './EditTask'
+import Archived from './Archived';
 
 export default function ArchivedTask() {
     const [tasks, setTasks] = useState([]);
@@ -39,14 +40,17 @@ export default function ArchivedTask() {
 
     return (
     <Fragment>
+        <h1 className="text-center mt-5">Tasks archiveds</h1>
         {" "}
       <table class="table mt-5 text-center">
         <thead>
           <tr>
             <th>Name</th>
             <th>Description</th>
+            <th>Active</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Archived</th>
           </tr>
         </thead>
         <tbody>
@@ -55,6 +59,7 @@ export default function ArchivedTask() {
             <tr key={task.id}>
               <td>{task.name}</td>
               <td>{task.description}</td>
+              <td>{task.archived?('true'):'false'}</td>
               <td>
                 <EditTask task={task} />
               </td>
@@ -65,6 +70,9 @@ export default function ArchivedTask() {
                 >
                   Delete
                 </button>
+              </td>
+              <td>
+                <Archived task={task} />
               </td>
             </tr>
           ))}
