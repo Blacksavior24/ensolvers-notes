@@ -22,7 +22,6 @@ DATABASE_URL=postgres://postgres:edward576@localhost:5432/ensolvers
 
 #### Tecnologías necesarias
 
-- [ ] React
-- [ ] Redux
-- [ ] Express
-- [ ] Sequelize - Postgres
+- [ ] React (Frontend)
+- [ ] Express (Backend)
+- [ ] Sequelize - Postgres (ORM)
