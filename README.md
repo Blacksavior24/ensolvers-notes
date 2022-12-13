@@ -1,7 +1,6 @@
 # ensolvers-notes
 
-![portada del trabajo]
-(https://raw.githubusercontent.com/Blacksavior24/ensolvers-notes/main/frontend/src/assets/portada.png)
+![portada del trabajo](https://raw.githubusercontent.com/Blacksavior24/ensolvers-notes/main/frontend/src/assets/portada.png)
 
 ## Objetivos del Proyecto
 
