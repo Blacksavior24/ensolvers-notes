@@ -1,5 +1,8 @@
 # ensolvers-notes
 
+![portada del trabajo]
+(https://raw.githubusercontent.com/Blacksavior24/ensolvers-notes/main/frontend/src/assets/portada.png)
+
 ## Objetivos del Proyecto
 
 - Construir una App utlizando React para el front, Node para el backend y Sequelize(ORM) con postgres.
