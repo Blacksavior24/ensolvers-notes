@@ -30,28 +30,7 @@ const ListTask = () => {
         console.error(err.message);
       }
     };
-
-    /*const archTask = async e =>{
-      console.log('tarea mandada'+e);
-      e.preventDefault();
-      try {
-        const body = {archived};
-        const response = await fetch(
-          `http://localhost:3000/api/v1/task/${task.id}`,
-          {
-            method: "PATCH",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(body)
-          }
-        );
-        window.location = '/';
-        setTasks(tasks.filter(task => task.id !== id));
-      } catch (err) {
-        console.error(err.message);
-      }
-    }*/
     
-
     useEffect(() => {
       getTasks();
     }, []);
